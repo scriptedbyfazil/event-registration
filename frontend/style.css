@@ -1,0 +1,12 @@
+body{
+font-family: Arial;
+text-align:center;
+margin:40px;
+}
+
+input, textarea{
+display:block;
+margin:10px auto;
+padding:10px;
+width:250px;
+}
