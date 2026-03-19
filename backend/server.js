@@ -1,62 +1,67 @@
 const express = require("express");
 const mysql = require("mysql");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
+
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
+// MySQL Database Connection
 const db = mysql.createConnection({
-host:"localhost",
-user:"root",
-password:"",
-database:"portfolio"
+  host: "localhost",
+  user: "root",
+  password: "", // replace with your MySQL password if set
+  database: "eventdb"
 });
 
-app.post("/contact",(req,res)=>{
-
-const {name,email,message}=req.body;
-
-const sql="INSERT INTO messages(name,email,message) VALUES (?,?,?)";
-
-db.query(sql,[name,email,message],(err,result)=>{
-if(err) throw err;
-res.send("Message stored");
-});
-
-});
-
-app.listen(3000,()=>{
-console.log("Server running");
-});
-
-document.getElementById("registrationForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const form = e.target;
-
-  const data = {
-    name: form[0].value,
-    email: form[1].value
-  };
-
-  try {
-    const response = await fetch("http://localhost:3000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-
-    const result = await response.text();
-    alert(result);
-
-    form.reset();
-
-  } catch (error) {
-    console.error(error);
-    alert("Error connecting to server");
+// Connect to database
+db.connect((err) => {
+  if (err) {
+    console.error("Database connection failed:", err);
+  } else {
+    console.log("Connected to MySQL database");
   }
+});
+
+// API Route: Register User
+app.post("/register", (req, res) => {
+  const { name, email, phone, ticket } = req.body;
+
+  if (!name || !email) {
+    return res.status(400).send("Name and Email are required");
+  }
+
+  const sql = "INSERT INTO users (name, email, phone, ticket) VALUES (?, ?, ?, ?)";
+
+  db.query(sql, [name, email, phone, ticket], (err, result) => {
+    if (err) {
+      console.error("Error inserting data:", err);
+      return res.status(500).send("Database error");
+    }
+
+    res.send("Registration successful");
+  });
+});
+
+// Optional: Get all registrations (for testing/admin)
+app.get("/users", (req, res) => {
+  const sql = "SELECT * FROM users";
+
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Error fetching users");
+    }
+
+    res.json(results);
+  });
+});
+
+// Start server
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
