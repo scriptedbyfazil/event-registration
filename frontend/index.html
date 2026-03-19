@@ -1,32 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>[EVENT TITLE HERE]</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>My Portfolio</h1>
+  <!-- Header Section -->
+  <header>
+    <h1>[EVENT TITLE]</h1>
+    <p>[EVENT TAGLINE / SHORT DESCRIPTION]</p>
+  </header>
 
-<section>
-<h2>About Me</h2>
-<p>I am a web development student.</p>
-</section>
+  <!-- Event Details -->
+  <section class="event-details">
+    <h2>About the Event</h2>
+    <p>[WRITE EVENT DESCRIPTION HERE]</p>
 
-<section>
-<h2>Contact</h2>
+    <ul>
+      <li><strong>Date:</strong> [EVENT DATE]</li>
+      <li><strong>Time:</strong> [EVENT TIME]</li>
+      <li><strong>Location:</strong> [EVENT LOCATION]</li>
+    </ul>
+  </section>
 
-<form id="contactForm">
-<input type="text" placeholder="Name" required>
-<input type="email" placeholder="Email" required>
-<textarea placeholder="Message"></textarea>
-<button type="submit">Send</button>
-</form>
+  <!-- Registration Form -->
+  <section class="form-section">
+    <h2>Register Now</h2>
 
-</section>
+    <form id="registrationForm">
 
-<script src="script.js"></script>
+      <input type="text" placeholder="Full Name" required>
+      
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="tel" placeholder="Phone Number">
+
+      <select required>
+        <option value="">Select Ticket Type</option>
+        <option>[TICKET TYPE 1]</option>
+        <option>[TICKET TYPE 2]</option>
+      </select>
+
+      <textarea placeholder="Additional Message"></textarea>
+
+      <button type="submit">Register</button>
+
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>[CONTACT EMAIL OR INFO]</p>
+  </footer>
 
 </body>
 </html>
