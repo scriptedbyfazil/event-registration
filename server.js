@@ -4,11 +4,9 @@ const cors = require("cors");
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// MySQL Database Connection
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -16,7 +14,6 @@ const db = mysql.createConnection({
   database: "eventdb"
 });
 
-// Connect to database
 db.connect((err) => {
   if (err) {
     console.error("Database connection failed:", err);
@@ -25,7 +22,6 @@ db.connect((err) => {
   }
 });
 
-// API Route: Register User
 app.post("/register", (req, res) => {
   const { name, email, phone, ticket } = req.body;
 
@@ -59,9 +55,8 @@ app.get("/users", (req, res) => {
   });
 });
 
-// Start server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
