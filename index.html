@@ -2,61 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>[EVENT TITLE HERE]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nrityadarpan 2026</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <h1>[EVENT TITLE]</h1>
-    <p>[EVENT TAGLINE / SHORT DESCRIPTION]</p>
+  <nav>
+    <div class="logo">KJDA</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Schedule</a></li>
+      <li><a href="#">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>NRITYADARPAN</h1>
+      <div class="divider"></div>
+      <h2>2026</h2>
+      <p>Annual Intra college dance fest by KJDA</p>
+    </div>
   </header>
 
-  <!-- Event Details -->
-  <section class="event-details">
-    <h2>About the Event</h2>
-    <p>[WRITE EVENT DESCRIPTION HERE]</p>
-
-    <ul>
-      <li><strong>Date:</strong> [EVENT DATE]</li>
-      <li><strong>Time:</strong> [EVENT TIME]</li>
-      <li><strong>Location:</strong> [EVENT LOCATION]</li>
-    </ul>
-  </section>
-
-  <!-- Registration Form -->
-  <section class="form-section">
-    <h2>Register Now</h2>
-
-    <form id="registrationForm">
-
-      <input type="text" placeholder="Full Name" required>
+  <main>
+    
+    <section class="event-info">
+      <h2>About the Event</h2>
+      <p>Kristu Jayanti Dance Academy organises Nrityadarpan 2026. The theme this year is games. Get ready to witness the magic of games outside the mobile screen.</p>
       
-      <input type="email" placeholder="Email Address" required>
+      <div class="details-grid">
+        <div class="detail-item"><strong>Date:</strong> 1/04/2026</div>
+        <div class="detail-item"><strong>Time:</strong> 12 pm & 3:30 pm</div>
+        <div class="detail-item"><strong>Location:</strong> Jubilee Auditorium</div>
+      </div>
+    </section>
 
-      <input type="tel" placeholder="Phone Number">
+    <section class="form-section">
+      <h2 class="form-title">Register for Nrityadarpan 2026</h2>
+      <p class="form-subtitle">Be one of the first to secure your spot for the most awaited dance fest of the year!</p>
+      
+      <form id="registrationForm">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address*</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number*</label>
+            <input type="tel" id="phone" required>
+          </div>
+        </div>
 
-      <select required>
-        <option value="">Select Ticket Type</option>
-        <option>[TICKET TYPE 1]</option>
-        <option>[TICKET TYPE 2]</option>
-      </select>
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="ticketType">Select Ticket Type*</label>
+            <select id="ticketType" required>
+              <option value="">-- Choose a Show --</option>
+              <option value="show1">Show 1 (12:00 PM)</option>
+              <option value="show2">Show 2 (3:30 PM)</option>
+            </select>
+          </div>
+        </div>
 
-      <textarea placeholder="Additional Message"></textarea>
 
-      <button type="submit">Register</button>
+        <button type="submit" class="submit-btn">Sign Me Up</button>
+        
+      </form>
+    </section>
 
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>[CONTACT EMAIL OR INFO]</p>
-  </footer>
-
-  <script src="script.js"></script>
+  </main>
   
+  <script src="script.js"></script>
 </body>
 </html>
