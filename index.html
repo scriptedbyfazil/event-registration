@@ -3,65 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>Nrityadarpan 2026</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
-
-    <!-- Title -->
+  <!-- Hero Section -->
+  <header class="hero">
     <h1>Nrityadarpan 2026</h1>
     <p class="tagline">Annual Intra College Dance Fest by KJDA</p>
+  </header>
 
-    <!-- About -->
-    <div class="card">
-      <h2>About the Event</h2>
-      <p>
-        Kristu Jayanti Dance Academy organises Nrityadarpan 2026.
-        The theme for this year is <strong>Games</strong> — get ready to witness
-        the magic of games outside the mobile screens.
-      </p>
-    </div>
+  <!-- About Section -->
+  <section class="about">
+    <h2>About the Event</h2>
+    <p>
+      Kristu Jayanti Dance Academy organises Nrityadarpan 2026. 
+      The theme for this year is <strong>Games</strong> — get ready to witness 
+      the magic of games beyond mobile screens.
+    </p>
+  </section>
 
-    <!-- Details -->
+  <!-- Event Details -->
+  <section class="details">
+    <h2>Event Details</h2>
     <div class="card">
-      <h2>Event Details</h2>
       <p><strong>Date:</strong> 1 April 2026</p>
       <p><strong>Time:</strong> 12:00 PM & 3:30 PM</p>
       <p><strong>Location:</strong> Jubilee Auditorium</p>
     </div>
+  </section>
 
-    <!-- Form -->
-    <div class="card">
-      <h2>Register</h2>
+  <!-- Registration Form -->
+  <section class="form-section">
+    <h2>Register Now</h2>
 
-      <form id="registrationForm">
+    <form id="registrationForm">
 
-        <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Full Name" required>
+      
+      <input type="email" placeholder="Email Address" required>
 
-        <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
 
-        <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Category</option>
+        <option>Solo Performance</option>
+        <option>Group Performance</option>
+        <option>Audience Pass</option>
+      </select>
 
-        <select required>
-          <option value="">Select Category</option>
-          <option>Solo</option>
-          <option>Group</option>
-          <option>Audience</option>
-        </select>
+      <textarea placeholder="Any additional details"></textarea>
 
-        <button type="submit">Register</button>
+      <button type="submit">Register</button>
 
-      </form>
-    </div>
+    </form>
+  </section>
 
-  </div>
-  
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Nrityadarpan | Kristu Jayanti Dance Academy</p>
+  </footer>
+
   <script src="script.js"></script>
 
 </body>
