@@ -1,71 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Nrityadarpan 2026</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
 
-<body>
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Nrityadarpan 2026</h1>
-    <p class="tagline">Annual Intra College Dance Fest by KJDA</p>
-  </header>
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
 
-  <!-- About Section -->
-  <section class="about">
-    <h2>About the Event</h2>
-    <p>
-      Kristu Jayanti Dance Academy organises Nrityadarpan 2026. 
-      The theme for this year is <strong>Games</strong> — get ready to witness 
-      the magic of games beyond mobile screens.
-    </p>
-  </section>
+.tagline {
+  font-size: 18px;
+  opacity: 0.9;
+}
 
-  <!-- Event Details -->
-  <section class="details">
-    <h2>Event Details</h2>
-    <div class="card">
-      <p><strong>Date:</strong> 1 April 2026</p>
-      <p><strong>Time:</strong> 12:00 PM & 3:30 PM</p>
-      <p><strong>Location:</strong> Jubilee Auditorium</p>
-    </div>
-  </section>
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
 
-  <!-- Registration Form -->
-  <section class="form-section">
-    <h2>Register Now</h2>
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    <form id="registrationForm">
+/* About */
+.about p {
+  text-align: center;
+  line-height: 1.6;
+}
 
-      <input type="text" placeholder="Full Name" required>
-      
-      <input type="email" placeholder="Email Address" required>
-
-      <input type="tel" placeholder="Phone Number" required>
-
-      <select required>
-        <option value="">Select Category</option>
-        <option>Solo Performance</option>
-        <option>Group Performance</option>
-        <option>Audience Pass</option>
-      </select>
-
-      <textarea placeholder="Any additional details"></textarea>
-
-      <button type="submit">Register</button>
-
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Nrityadarpan | Kristu Jayanti Dance Academy</p>
-  </footer>
-
-  <script src="script.js"></script>
-
-</body>
-</html>
+/* Details */
+.details .card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.
