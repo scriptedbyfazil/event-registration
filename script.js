@@ -1,86 +1,38 @@
-/* General */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1d2b64, #f8cdda);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+const form = document.getElementById("registrationForm");
 
-/* Main Container */
-.container {
-  text-align: center;
-  width: 90%;
-  max-width: 500px;
-}
+form.addEventListener("submit", async function (e) {
+  e.preventDefault(); 
 
-/* Title */
-h1 {
-  color: white;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
+  const firstName = document.getElementById("firstName").value.trim();
+  const lastName = document.getElementById("lastName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const ticket = document.getElementById("ticketType").value;
 
-.tagline {
-  color: #f0f0f0;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
+  const data = {
+    name: `${firstName} ${lastName}`,
+    email: email,
+    phone: phone,
+    ticket: ticket
+  };
 
-/* Cards */
-.card {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+  try {
+    const response = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
 
-/* Headings */
-h2 {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
+    const result = await response.text();
 
-/* Text */
-p {
-  font-size: 14px;
-  line-height: 1.5;
-}
+    alert(result);
 
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    form.reset();
 
-/* Inputs (smaller and centered) */
-input, select {
-  width: 70%;
-  padding: 8px;
-  margin: 6px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 13px;
-}
-
-/* Button */
-button {
-  width: 70%;
-  padding: 10px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 6px;
-  background: #1d2b64;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #0f1b46;
-}
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+});
