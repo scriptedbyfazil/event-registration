@@ -8,11 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: "mysql://root:xZBAvkGqrfRbfYQXNBURZhyyRSTjvYoS@centerbeam.proxy.rlwy.net:45550/railway",
+  host: "centerbeam.proxy.rlwy.net",
   user: "root",
   password: "xZBAvkGqrfRbfYQXNBURZhyyRSTjvYoS",
   database: "railway",
-  port: 3306,
+  port: 45550,
   ssl: {
     rejectUnauthorized: false
   }
